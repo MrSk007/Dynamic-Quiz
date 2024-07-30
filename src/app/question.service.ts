@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class QuestionService {
 
-  private apiUrl = 'public/questions.json';  // Adjust the path if necessary
+  private apiUrl = 'questions.json';  // Adjust the path if necessary
 
   constructor(private http: HttpClient) { }
 
