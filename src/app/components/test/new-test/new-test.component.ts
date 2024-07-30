@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { QuestionService } from '../../../services';
 import { CommonModule } from '@angular/common';
+import { QuestionService } from '../../../services';
 
 @Component({
   selector: 'app-new-test',
