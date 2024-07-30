@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "question": "Do you enjoy programming?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 2,
+    "question": "Have you ever worked with Angular?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 3,
+    "question": "Are you familiar with TypeScript?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 4,
+    "question": "Do you like to work on frontend projects?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 5,
+    "question": "Have you used any version control systems?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 6,
+    "question": "Are you comfortable with writing unit tests?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 7,
+    "question": "Do you prefer working in a team environment?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 8,
+    "question": "Have you worked on any open-source projects?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 9,
+    "question": "Do you follow coding best practices?",
+    "options": ["Yes", "No"]
+  },
+  {
+    "id": 10,
+    "question": "Are you interested in learning new technologies?",
+    "options": ["Yes", "No"]
+  }
+]
