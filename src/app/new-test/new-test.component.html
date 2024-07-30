@@ -1,0 +1,7 @@
+<div *ngIf="questions.length > 0">
+  <h1>{{questions[currentQuestionIndex]?.question}}</h1>
+  <button (click)="answerQuestion('Yes')">Yes</button>
+  <button (click)="answerQuestion('No')">No</button>
+  <button (click)="skipQuestion()">Skip</button>
+  <button (click)="nextQuestion()" [disabled]="currentQuestionIndex >= questions.length">Next</button>
+</div>

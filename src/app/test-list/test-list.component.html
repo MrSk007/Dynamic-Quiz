@@ -1,0 +1,17 @@
+<div>
+  <button (click)="newTest()">New Test</button>
+  <table>
+    <thead>
+      <tr>
+        <th>Test ID</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let test of tests">
+        <td>{{test.id}}</td>
+        <td>{{test.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
