@@ -1,7 +1,71 @@
 <div *ngIf="questions.length > 0">
-  <h1>{{questions[currentQuestionIndex]?.question}}</h1>
-  <button (click)="answerQuestion('Yes')">Yes</button>
-  <button (click)="answerQuestion('No')">No</button>
-  <button (click)="skipQuestion()">Skip</button>
-  <button (click)="nextQuestion()" [disabled]="currentQuestionIndex >= questions.length">Next</button>
+  <p-card class="question-card">
+    <ng-template pTemplate="header">
+      <h1>Question {{ currentQuestionIndex + 1 }} of {{ questions.length }}</h1>
+      <h2>{{ questions[currentQuestionIndex]?.question }}</h2>
+    </ng-template>
+    <ng-template pTemplate="content">
+      <div class="button-group">
+        <p-button
+          label="Yes"
+          icon="pi pi-check"
+          (click)="answerQuestion('Yes')"
+          [class.active]="isSelected('Yes')"
+        ></p-button>
+        <p-button
+          label="No"
+          icon="pi pi-times"
+          (click)="answerQuestion('No')"
+          [class.active]="isSelected('No')"
+        ></p-button>
+        <p-button
+          label="Skip"
+          icon="pi pi-forward"
+          (click)="skipQuestion()"
+        ></p-button>
+        <p-button
+          label="Previous"
+          icon="pi pi-chevron-left"
+          (click)="previousQuestion()"
+          [disabled]="currentQuestionIndex <= 0"
+        ></p-button>
+        <p-button
+          label="Next"
+          icon="pi pi-chevron-right"
+          (click)="nextQuestion()"
+          [disabled]="currentQuestionIndex >= questions.length - 1"
+        ></p-button>
+        <p-button
+          label="Submit"
+          icon="pi pi-check-circle"
+          (click)="submit()"
+          [disabled]="!isLastQuestion()"
+        ></p-button>
+      </div>
+    </ng-template>
+  </p-card>
+
+  <p-dialog
+    header="Result"
+    [(visible)]="displayResultDialog"
+    [modal]="true"
+    [closable]="false"
+    [style]="{ width: '50rem' }"
+    [breakpoints]="{ '1199px': '75vw', '575px': '90vw' }"
+    [maximizable]="true"
+  >
+    <p>{{ resultMessage }}</p>
+    <p-footer>
+      <p-button
+      label="Back"
+      icon="pi pi-times p-button-secondary"
+      (click)="closeDialog(true)"
+    ></p-button>
+      <p-button
+        label="Ok"
+        icon="pi pi-check"
+        (click)="closeDialog()"
+      ></p-button>
+    </p-footer>
+  </p-dialog>
 </div>

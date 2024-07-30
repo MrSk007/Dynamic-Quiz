@@ -1,15 +1,15 @@
-<div>
-  <h2>Login</h2>
-  <form (submit)="login()">
-    <div>
+<div class="login-container">
+  <div><h2>Login</h2></div>
+  <form (ngSubmit)="login()" #loginForm="ngForm">
+    <div class="p-field">
       <label for="username">Username:</label>
-      <input id="username" [(ngModel)]="username" name="username" required />
+      <input id="username" pInputText [(ngModel)]="username" name="username" required />
     </div>
-    <div>
+    <div class="p-field">
       <label for="password">Password:</label>
-      <input id="password" type="password" [(ngModel)]="password" name="password" required />
+      <input id="password" pPassword [(ngModel)]="password" name="password" required />
     </div>
-    <button type="submit">Login</button>
-    <div *ngIf="loginError" style="color: red;">Invalid username or password.</div>
+    <button pButton type="submit" label="Login"></button>
+    <div *ngIf="loginError" class="error-message">Invalid username or password.</div>
   </form>
 </div>

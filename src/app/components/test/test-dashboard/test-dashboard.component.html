@@ -1,17 +1,21 @@
-<div>
-  <button (click)="newTest()">New Test</button>
-  <table>
-    <thead>
+<div class="container">
+  <p-button label="New Test" icon="pi pi-plus p-mb-3" (click)="newTest()"></p-button>
+  <p-table [value]="tests" class="p-mt-3">
+    <ng-template pTemplate="header">
       <tr>
         <th>Test ID</th>
         <th>Status</th>
+        <th>Marks</th>
+        <th>Completed</th> <!-- Add a header for the completed datetime -->
       </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let test of tests">
+    </ng-template>
+    <ng-template pTemplate="body" let-test>
+      <tr>
         <td>{{test.id}}</td>
         <td>{{test.status}}</td>
+        <td>{{test.marks + " / " + test.totalMarks}}</td>
+        <td>{{test.completed | date:'short'}}</td>
       </tr>
-    </tbody>
-  </table>
+    </ng-template>
+  </p-table>
 </div>

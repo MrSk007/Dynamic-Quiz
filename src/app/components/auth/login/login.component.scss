@@ -1,0 +1,25 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin: auto;
+  padding: 1em;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.p-field {
+  margin-bottom: 1em;
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+}
+
+.error-message {
+  color: red;
+  margin-top: 1em;
+}
