@@ -3,13 +3,13 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-test-list',
+  selector: 'app-test-dashboard',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './test-list.component.html',
-  styleUrl: './test-list.component.scss'
+  templateUrl: './test-dashboard.component.html',
+  styleUrl: './test-dashboard.component.scss'
 })
-export class TestListComponent implements OnInit {
+export class TestDashboardComponent implements OnInit {
 
   tests = [
     { id: 1, status: 'Pass' },

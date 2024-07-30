@@ -1,11 +1,10 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-
-import { routes } from './app.routes';
+import { routes } from './routes';
 import { HTTP_INTERCEPTORS, provideHttpClient } from '@angular/common/http';
-import { AuthGuard } from './auth.guard';
-import { AuthService } from './auth.service';
-import { AuthInterceptor } from './auth.interceptor';
+import { AuthGuard } from './guards';
+import { AuthService } from './services';
+import { AuthInterceptor } from './interceptors';
 
 export const appConfig: ApplicationConfig = {
   providers: [
