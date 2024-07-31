@@ -39,7 +39,7 @@ export class NewTestComponent implements OnInit {
 
   ngOnInit(): void {
     this.questionService.getQuestions().subscribe(data => {
-      this.questions = data;
+      this.questions = data["record"].questions;
       this.loadQuestion();
     });
   }
