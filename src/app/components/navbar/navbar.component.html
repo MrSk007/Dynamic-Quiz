@@ -1,10 +1,20 @@
-<div class="top-bar bg-primary">
+<div class="top-bar bg-primary" (mouseleave)="closeDropdown()">
   <div class="top-bar left">
-    <div class="top-bar title">
+    <div class="top-bar title" (click)="navigateToDashboard()">
       Dynamic Quiz
     </div>
   </div>
-  <div class="top-bar right">
-
+  <div *ngIf="currentRoute && currentRoute !== '/login'" class="top-bar right">
+    <div class="user-profile-container">
+      <p-avatar
+        class="user-profile"
+        label="U"
+        styleClass="mr-2 mt-1"
+        [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }"
+        (click)="toggleDropdown()"/>
+      <div *ngIf="isDropdownVisible" class="dropdown-menu">
+        <button (click)="logout()">Logout</button>
+      </div>
+    </div>
   </div>
 </div>
