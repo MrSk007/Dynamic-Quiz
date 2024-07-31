@@ -11,7 +11,7 @@
           </div>
           <div class="p-field">
             <label for="password">Password <span class="required-asterisk">*</span></label>
-            <input id="password" pPassword class="w-100" formControlName="password" />
+            <p-password class="custom-pass-input" formControlName="password" [toggleMask]="true" />
           </div>
           <button pButton type="submit" label="Proceed"
             class="bg-primary-complementary no-border my-1 mt-3 mb-0 w-100"></button>

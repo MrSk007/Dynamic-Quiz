@@ -43,23 +43,40 @@ $title-bg-color: linear-gradient(to right, rgb(89, 161, 244), rgb(43 148 222), r
       }
     }
   }
-}
+  .p-field {
+    margin-bottom: 1em;
 
-.p-field {
-  margin-bottom: 1em;
+    label {
+      display: block;
+      margin-bottom: 0.5em;
+      color: rgb(138, 138, 138);
+      font-size: .875rem;
+      font-weight: 500;
+      letter-spacing: .05rem;
+    }
+  }
 
-  label {
+  .error-message {
+    color: red;
+    margin-top: 1em;
+  }
+
+  .custom-pass-input
+  {
     display: block;
-    margin-bottom: 0.5em;
-    color: rgb(138, 138, 138);
-    font-size: .875rem;
-    font-weight: 500;
-    letter-spacing: .05rem;
+    width: 100%;
+
+    .p-password
+    {
+      &.p-component
+      {  width: 100%;
+        .p-password-input{
+          width: 100%;
+        }
+      }
+    }
   }
 }
 
-.error-message {
-  color: red;
-  margin-top: 1em;
-}
+
 
