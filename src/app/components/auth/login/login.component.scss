@@ -1,21 +1,60 @@
+$title-bg-color: linear-gradient(to right, rgb(89, 161, 244), rgb(43 148 222), rgb(231, 128, 225), rgb(238, 128, 224));
+
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
+  height: calc(100% - 50px);
   margin: auto;
   padding: 1em;
-  border: 1px solid #ddd;
-  border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  .sign-in {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    border-radius: .5rem;
+
+    .section-wrapper {
+      border-right: solid 1px #dcdcdc;
+      display: block;
+      align-content: center;
+      flex: 1 60%;
+      background-color: #fcfcfc;
+      border-radius: .5rem 0 0 .5rem;
+
+      .main-title {
+        font-size: 1.8rem;
+        background: $title-bg-color;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-align: center;
+      }
+    }
+    .image-wrappper{
+      img{
+        position: relative;
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+        border-radius: 0 .5rem .5rem 0;
+      }
+    }
+  }
 }
 
 .p-field {
   margin-bottom: 1em;
+
   label {
     display: block;
     margin-bottom: 0.5em;
+    color: rgb(138, 138, 138);
+    font-size: .875rem;
+    font-weight: 500;
+    letter-spacing: .05rem;
   }
 }
 
@@ -23,3 +62,4 @@
   color: red;
   margin-top: 1em;
 }
+

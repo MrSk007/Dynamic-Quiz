@@ -11,7 +11,7 @@ export const routes: Routes = [
     canActivate: [AuthGuard],
   },
   {
-    path: 'new-test',
+    path: 'new-quiz',
     loadComponent: () =>
       import('./../components').then((m) => m.NewTestComponent),
     canActivate: [AuthGuard],

@@ -1,15 +1,27 @@
-<div class="login-container">
-  <div><h2>Login</h2></div>
-  <form (ngSubmit)="login()" #loginForm="ngForm">
-    <div class="p-field">
-      <label for="username">Username:</label>
-      <input id="username" pInputText [(ngModel)]="username" name="username" required />
+<main class="bg-primary">
+  <app-navbar></app-navbar>
+  <section class="login-container">
+    <div class="sign-in bg-white">
+      <div class="section-wrapper h-100 w-100">
+        <div class="main-title mb-2">Log in to Quiz</div>
+        <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form p-4">
+          <div class="p-field">
+            <label for="username">Username</label>
+            <input id="username" pInputText class="w-100" formControlName="username" />
+          </div>
+          <div class="p-field">
+            <label for="password">Password</label>
+            <input id="password" pPassword class="w-100" formControlName="password" />
+          </div>
+          <button pButton type="submit" label="Proceed"
+            class="bg-primary-complementary no-border my-1 mt-3 mb-0 w-100"></button>
+          <div *ngIf="loginError" class="error-message">Invalid username or password.</div>
+        </form>
+      </div>
+      <div class="image-wrappper">
+        <img alt=""
+          [src]="'https://1.bp.blogspot.com/-Y12GC2d-iXE/XpyRg-3tN4I/AAAAAAAAAds/9IHtkkSADK4E-a9bP2wZSegpx4H1KonEQCLcBGAsYHQ/s1600/Quiz_7.png'">
+      </div>
     </div>
-    <div class="p-field">
-      <label for="password">Password:</label>
-      <input id="password" pPassword [(ngModel)]="password" name="password" required />
-    </div>
-    <button pButton type="submit" label="Login"></button>
-    <div *ngIf="loginError" class="error-message">Invalid username or password.</div>
-  </form>
-</div>
+  </section>
+</main>

@@ -1,21 +1,30 @@
-<div class="container">
-  <p-button label="New Test" icon="pi pi-plus p-mb-3" (click)="newTest()"></p-button>
-  <p-table [value]="tests" class="p-mt-3">
-    <ng-template pTemplate="header">
-      <tr>
-        <th>Test ID</th>
-        <th>Status</th>
-        <th>Marks</th>
-        <th>Completed</th> <!-- Add a header for the completed datetime -->
-      </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-test>
-      <tr>
-        <td>{{test.id}}</td>
-        <td>{{test.status}}</td>
-        <td>{{test.marks + " / " + test.totalMarks}}</td>
-        <td>{{test.completed | date:'short'}}</td>
-      </tr>
-    </ng-template>
-  </p-table>
-</div>
+<main class="bg-primary">
+  <app-navbar></app-navbar>
+  <div class="container-wrapper bg-white w-100 h-100">
+    <div class="top-menu p-3">
+      <p-button label="New Quiz" icon="pi pi-plus p-mb-3" class="action-button" (click)="newTest()"></p-button>
+    </div>
+    <div class="result-grid-wrapper p-5">
+      <p-table [value]="tests">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Test ID</th>
+            <th>Status</th>
+            <th>Marks</th>
+            <th>Completed</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-test>
+          <tr>
+            <td>{{test.id}}</td>
+            <td>{{test.status}}</td>
+            <td>{{test.marks + " / " + test.totalMarks}}</td>
+            <td>{{test.completed | date:'short'}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+    </div>
+
+  </div>
+</main>
+

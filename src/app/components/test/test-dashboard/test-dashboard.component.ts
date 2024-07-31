@@ -6,11 +6,12 @@ import { TableModule } from 'primeng/table';
 import { Test } from '../../../models';
 import { LocalStorageService } from '../../../services';
 import { TEST_RESULT_KEY } from '../../../constants';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
   selector: 'app-test-dashboard',
   standalone: true,
-  imports: [CommonModule,ButtonModule, TableModule],
+  imports: [CommonModule,ButtonModule, TableModule,NavbarComponent],
   templateUrl: './test-dashboard.component.html',
   styleUrl: './test-dashboard.component.scss'
 })
@@ -32,9 +33,10 @@ export class TestDashboardComponent implements OnInit {
     else{
       this.tests = this.storageService.getItem(TEST_RESULT_KEY) as Test[];
     }
+    this.tests = this.tests.reverse();
   }
 
   newTest(): void {
-    this.router.navigate(['/new-test']);
+    this.router.navigate(['/new-quiz']);
   }
 }

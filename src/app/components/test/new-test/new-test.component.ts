@@ -8,11 +8,12 @@ import { DialogService } from 'primeng/dynamicdialog';
 import { TEST_RESULT_KEY } from '../../../constants';
 import { Test } from '../../../models';
 import { CardModule } from 'primeng/card';
+import { NavbarComponent } from '../../navbar/navbar.component';
 
 @Component({
   selector: 'app-new-test',
   standalone: true,
-  imports: [CommonModule, ButtonModule, DialogModule,CardModule],
+  imports: [CommonModule, ButtonModule, DialogModule,CardModule,NavbarComponent],
   providers: [DialogService], // Provide DialogService
   templateUrl: './new-test.component.html',
   styleUrls: ['./new-test.component.scss']

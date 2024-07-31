@@ -21,3 +21,10 @@
 .p-button {
   margin-bottom: 1em;
 }
+
+.container-wrapper{
+  .top-menu{
+    display: flex;
+    justify-content: end;
+  }
+}
