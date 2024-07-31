@@ -6,9 +6,9 @@
   </div>
   <div *ngIf="currentRoute && currentRoute !== '/login'" class="top-bar right">
     <div class="user-profile-container">
-      <p-avatar class="user-profile" label="U" styleClass="mr-2 mt-1"
-        [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" (click)="toggleDropdown()" />
       <a class="user-name text-white" href="https://www.linkedin.com/in/saravana-tn47" target="_blank">SARAVANA</a>
+      <p-avatar class="user-profile" label="U" styleClass="mx-2 mt-1"
+        [style]="{ 'background-color': '#ece9fc', color: '#2a1261' }" (click)="toggleDropdown()" />
       <div *ngIf="isDropdownVisible" class="dropdown-menu">
         <button (click)="logout()">Logout</button>
       </div>

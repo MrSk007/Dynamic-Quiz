@@ -10,11 +10,12 @@ import { Test } from '../../../models';
 import { CardModule } from 'primeng/card';
 import { NavbarComponent } from '../../navbar/navbar.component';
 import { TooltipModule } from 'primeng/tooltip';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 
 @Component({
   selector: 'app-new-test',
   standalone: true,
-  imports: [CommonModule, ButtonModule, DialogModule, CardModule, NavbarComponent, TooltipModule],
+  imports: [CommonModule, ButtonModule, DialogModule, CardModule, NavbarComponent, TooltipModule,ProgressSpinnerModule],
   providers: [DialogService],
   templateUrl: './new-test.component.html',
   styleUrls: ['./new-test.component.scss']
@@ -30,6 +31,7 @@ export class NewTestComponent implements OnInit {
   answers: { [key: number]: string } = {};
 
   displayResultDialog: boolean = false;
+  isLoading = true;
 
   constructor(
     private questionService: QuestionService,
@@ -38,9 +40,11 @@ export class NewTestComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.isLoading = true;
     this.questionService.getQuestions().subscribe(data => {
       this.questions = data["record"].questions;
       this.loadQuestion();
+      this.isLoading = false;
     });
   }
 

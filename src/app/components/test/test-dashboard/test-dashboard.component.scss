@@ -56,4 +56,24 @@
   }
 }
 
+.quiz-status {
+  position: relative;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 0.875rem;
+  line-height: 1.1;
+  letter-spacing: 0.6px;
+
+  &.pass{
+    background-color: #dff3ea;
+    color: #36b37e;
+  }
+
+  &.fail{
+    background-color: #fde1df;
+    color: #f44336;
+  }
+}
+
 

@@ -7,11 +7,12 @@ import { Test } from '../../../models';
 import { LocalStorageService } from '../../../services';
 import { TEST_RESULT_KEY } from '../../../constants';
 import { NavbarComponent } from '../../navbar/navbar.component';
+import { TimeAgoPipe } from '../../../pipes';
 
 @Component({
   selector: 'app-test-dashboard',
   standalone: true,
-  imports: [CommonModule,ButtonModule, TableModule,NavbarComponent],
+  imports: [CommonModule,ButtonModule, TableModule,NavbarComponent,TimeAgoPipe],
   templateUrl: './test-dashboard.component.html',
   styleUrl: './test-dashboard.component.scss',
   encapsulation:ViewEncapsulation.None

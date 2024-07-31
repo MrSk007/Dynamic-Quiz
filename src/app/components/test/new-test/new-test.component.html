@@ -1,7 +1,7 @@
 <main class="bg-primary">
   <app-navbar></app-navbar>
   <div class="w-100 bg-white quiz-wrapper">
-    <div class="p-5 m-1 quiz-section" *ngIf="questions.length > 0">
+    <div class="p-5 m-1 quiz-section" *ngIf="questions.length > 0 && !isLoading">
       <div class="question-content">
         <div class="question-pagination">Question {{ currentQuestionIndex + 1 }} <span class="text-total">/ {{
             questions.length }}</span></div>
@@ -39,6 +39,9 @@
           <button pButton label="Confirm" class="bg-primary-complementary no-border" (click)="closeDialog()"></button>
         </p-footer>
       </p-dialog>
+    </div>
+    <div class="align-content-center" *ngIf="isLoading">
+      <p-progressSpinner ariaLabel="loading" />
     </div>
   </div>
 </main>

@@ -20,7 +20,7 @@ import { USER_NAME, USER_PWD } from '../../../constants';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  imageURL = "https://1.bp.blogspot.com/-Y12GC2d-iXE/XpyRg-3tN4I/AAAAAAAAAds/9IHtkkSADK4E-a9bP2wZSegpx4H1KonEQCLcBGAsYHQ/s1600/Quiz_7.png";
+  imageURL = "Quiz_7.png";
   loginError: boolean = false;
   showLogin = false;
 
