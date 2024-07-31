@@ -21,13 +21,11 @@
 
 .p-button-primary {
   background-color: #007ad9;
-  /* Highlight color for selected button */
   color: white;
 }
 
 .p-button-secondary {
   background-color: #e0e0e0;
-  /* Color for non-selected buttons */
   color: black;
 }
 
@@ -36,7 +34,7 @@
   justify-content: center;
   height: calc(100% - 0px);
 
-  .quiz-section{
+  .quiz-section {
     flex: 1;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     height: calc(100% - 65px);
@@ -51,18 +49,26 @@
         color: #d0cedb;
       }
     }
-    .quiz{
+
+    .quiz {
       font-size: 1.8rem;
       font-weight: 500;
       color: #2f2f2f;
     }
-    .button-group-quiz{
+
+    .button-group-quiz {
       display: flex;
       flex-direction: column;
     }
-    .button-group-row{
+
+    .button-group-row {
       display: flex;
       justify-content: space-between;
     }
   }
+}
+
+.button-selected {
+  background-color: #ffe08b;
+  color: rgb(72, 72, 72);
 }

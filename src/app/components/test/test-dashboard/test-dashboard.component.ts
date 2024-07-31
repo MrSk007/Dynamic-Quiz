@@ -17,6 +17,7 @@ import { NavbarComponent } from '../../navbar/navbar.component';
   encapsulation:ViewEncapsulation.None
 })
 export class TestDashboardComponent implements OnInit {
+  lastSubmittedTest: Test | undefined;
 
   tests: Test[] = [
     { id: 1, status: 'Pass', marks: 7, totalMarks: 10, completed: new Date('2024-07-30T10:00:00Z') },
@@ -35,6 +36,7 @@ export class TestDashboardComponent implements OnInit {
       this.tests = this.storageService.getItem(TEST_RESULT_KEY) as Test[];
     }
     this.tests = this.tests.reverse();
+    this.lastSubmittedTest = this.tests[0];
   }
 
   newTest(): void {

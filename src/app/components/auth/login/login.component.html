@@ -1,16 +1,16 @@
 <main class="bg-primary">
   <app-navbar></app-navbar>
   <section class="login-container">
-    <div class="sign-in bg-white">
+    <div class="sign-in bg-white" *ngIf="showLogin">
       <div class="section-wrapper h-100 w-100">
         <div class="main-title mb-2">Log in to Quiz</div>
         <form [formGroup]="loginForm" (ngSubmit)="login()" class="login-form p-4">
           <div class="p-field">
-            <label for="username">Username</label>
+            <label for="username">Username <span class="required-asterisk">*</span></label>
             <input id="username" pInputText class="w-100" formControlName="username" />
           </div>
           <div class="p-field">
-            <label for="password">Password</label>
+            <label for="password">Password <span class="required-asterisk">*</span></label>
             <input id="password" pPassword class="w-100" formControlName="password" />
           </div>
           <button pButton type="submit" label="Proceed"
@@ -20,8 +20,9 @@
       </div>
       <div class="image-wrappper">
         <img alt=""
-          [src]="'https://1.bp.blogspot.com/-Y12GC2d-iXE/XpyRg-3tN4I/AAAAAAAAAds/9IHtkkSADK4E-a9bP2wZSegpx4H1KonEQCLcBGAsYHQ/s1600/Quiz_7.png'">
+          [src]="imageURL | safeURL">
       </div>
     </div>
+    <p-progressSpinner ariaLabel="loading" *ngIf="!showLogin" />
   </section>
 </main>

@@ -8,8 +8,7 @@
       <p-button label="New Quiz" icon="pi pi-plus p-mb-3" class="action-button" (click)="newTest()"></p-button>
     </div>
     <div class="result-grid-wrapper p-5">
-      <p-table [value]="tests" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
-        [rowsPerPageOptions]="[5, 10, 20]">
+      <p-table [value]="tests" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }">
         <ng-template pTemplate="header">
           <tr>
             <th>Test ID</th>
@@ -19,7 +18,7 @@
           </tr>
         </ng-template>
         <ng-template pTemplate="body" let-test>
-          <tr>
+          <tr [ngClass]="{'highlighted': test === lastSubmittedTest}">
             <td>{{ test.id }}</td>
             <td>{{ test.status }}</td>
             <td>{{ test.marks + " / " + test.totalMarks }}</td>

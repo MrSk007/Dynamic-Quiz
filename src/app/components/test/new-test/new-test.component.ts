@@ -9,28 +9,32 @@ import { TEST_RESULT_KEY } from '../../../constants';
 import { Test } from '../../../models';
 import { CardModule } from 'primeng/card';
 import { NavbarComponent } from '../../navbar/navbar.component';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-new-test',
   standalone: true,
-  imports: [CommonModule, ButtonModule, DialogModule,CardModule,NavbarComponent],
-  providers: [DialogService], // Provide DialogService
+  imports: [CommonModule, ButtonModule, DialogModule, CardModule, NavbarComponent, TooltipModule],
+  providers: [DialogService],
   templateUrl: './new-test.component.html',
   styleUrls: ['./new-test.component.scss']
 })
 export class NewTestComponent implements OnInit {
-  questions: any[] = [];
+  resultMessage: string = '';
+
   currentQuestionIndex: number = 0;
+
+  questions: any[] = [];
+  skippedQuestions: number[] = [];
+
   answers: { [key: number]: string } = {};
-  skippedQuestions: number[] = []; // Stack to track skipped questions
 
   displayResultDialog: boolean = false;
-  resultMessage: string = '';
 
   constructor(
     private questionService: QuestionService,
     private router: Router,
-    private storageService:LocalStorageService
+    private storageService: LocalStorageService
   ) { }
 
   ngOnInit(): void {
@@ -82,9 +86,9 @@ export class NewTestComponent implements OnInit {
   }
 
   submit(): void {
-    if (Object.keys(this.answers).length < this.questions.length) {
+    if (Object.keys(this.answers).length <= this.questions.length) {
       const attemptedQuestions = Object.keys(this.answers).length;
-      this.resultMessage = `You have attempted ${attemptedQuestions} out of ${this.questions.length}. Please click Ok for results.`;
+      this.resultMessage = `You have attempted ${attemptedQuestions} out of ${this.questions.length}. Please click Confirm for results.`;
       this.displayResultDialog = true;
       return;
     }
@@ -95,19 +99,17 @@ export class NewTestComponent implements OnInit {
     const correctAnswers = Object.values(this.answers).filter(answer => answer === 'Yes').length;
     const status = correctAnswers >= 7 ? 'Pass' : 'Fail';
     const tests = this.storageService.getItem(TEST_RESULT_KEY) as Test[];
-    tests.push({id:tests[tests.length - 1].id + 1,status: status, marks: correctAnswers, totalMarks: this.questions.length, completed: new Date()});
-    this.storageService.setItem(TEST_RESULT_KEY,tests);
+    tests.push({ id: tests[tests.length - 1].id + 1, status: status, marks: correctAnswers, totalMarks: this.questions.length, completed: new Date() });
+    this.storageService.setItem(TEST_RESULT_KEY, tests);
     this.displayResultDialog = false;
   }
 
   closeDialog(dialogOnly = false): void {
-    if(!dialogOnly)
-    {
+    if (!dialogOnly) {
       this.showResult();
       this.router.navigate(['/']);
     }
-    else
-    {
+    else {
       this.displayResultDialog = false;
     }
   }

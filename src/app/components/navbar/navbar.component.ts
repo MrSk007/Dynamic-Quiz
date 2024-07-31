@@ -8,7 +8,7 @@ import { AuthService } from '../../services';
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [AvatarModule, AvatarGroupModule,CommonModule],
+  imports: [AvatarModule, AvatarGroupModule, CommonModule],
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss']
 })
@@ -16,7 +16,7 @@ export class NavbarComponent implements OnInit {
   currentRoute = "";
   isDropdownVisible = false;
 
-  constructor(private router: Router,private authService: AuthService) {}
+  constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit() {
     this.currentRoute = this.router.url;
@@ -29,8 +29,7 @@ export class NavbarComponent implements OnInit {
     this.isDropdownVisible = !this.isDropdownVisible;
   }
 
-  closeDropdown()
-  {
+  closeDropdown() {
     this.isDropdownVisible = false;
   }
 
@@ -40,8 +39,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['/login']);
   }
 
-  navigateToDashboard()
-  {
+  navigateToDashboard() {
     this.router.navigate(['/dashboard']);
   }
 }
