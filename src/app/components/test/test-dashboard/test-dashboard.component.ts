@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
@@ -13,7 +13,8 @@ import { NavbarComponent } from '../../navbar/navbar.component';
   standalone: true,
   imports: [CommonModule,ButtonModule, TableModule,NavbarComponent],
   templateUrl: './test-dashboard.component.html',
-  styleUrl: './test-dashboard.component.scss'
+  styleUrl: './test-dashboard.component.scss',
+  encapsulation:ViewEncapsulation.None
 })
 export class TestDashboardComponent implements OnInit {
 

@@ -2,10 +2,14 @@
   <app-navbar></app-navbar>
   <div class="container-wrapper bg-white w-100 h-100">
     <div class="top-menu p-3">
+      <div class="top-title ml-4 pl-1 pt-2">
+        Dashboard
+      </div>
       <p-button label="New Quiz" icon="pi pi-plus p-mb-3" class="action-button" (click)="newTest()"></p-button>
     </div>
     <div class="result-grid-wrapper p-5">
-      <p-table [value]="tests">
+      <p-table [value]="tests" [paginator]="true" [rows]="5" [tableStyle]="{ 'min-width': '50rem' }"
+        [rowsPerPageOptions]="[5, 10, 20]">
         <ng-template pTemplate="header">
           <tr>
             <th>Test ID</th>
@@ -16,15 +20,13 @@
         </ng-template>
         <ng-template pTemplate="body" let-test>
           <tr>
-            <td>{{test.id}}</td>
-            <td>{{test.status}}</td>
-            <td>{{test.marks + " / " + test.totalMarks}}</td>
-            <td>{{test.completed | date:'short'}}</td>
+            <td>{{ test.id }}</td>
+            <td>{{ test.status }}</td>
+            <td>{{ test.marks + " / " + test.totalMarks }}</td>
+            <td>{{ test.completed | date : "short" }}</td>
           </tr>
         </ng-template>
       </p-table>
     </div>
-
   </div>
 </main>
-

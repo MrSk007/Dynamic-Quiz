@@ -143,21 +143,3 @@
 .no-border{
   border: none;
 }
-
-.action-button button {
-  background-color: transparent;
-  border: 2px solid var(--primary-complementary);
-  color: var(--primary-complementary);
-  // padding: 8px 16px;
-  // border-radius: 4px;
-  // font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.1s, color 0.1s;
-}
-
-.action-button button:hover {
-  background-color: var(--primary-complementary);
-  color: white;
-}
-
-
