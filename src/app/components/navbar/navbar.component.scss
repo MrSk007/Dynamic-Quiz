@@ -27,12 +27,17 @@
 
 .user-profile-container {
   position: relative;
+  .user-name
+  {
+    font-weight: 600;
+    text-decoration: none;
+  }
 }
 
 .dropdown-menu {
   position: absolute;
-  top: 40px;
-  right: 5px;
+  top: 100%;
+  right: 85px;
   background: white;
   border: 1px solid #ccc;
   border-radius: 4px;
