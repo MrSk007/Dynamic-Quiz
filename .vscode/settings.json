@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/a992bfd2-d9b4-4c54-bd2b-2bcdcbe69d8f/resourceGroups/Sk-interview/providers/Microsoft.Web/sites/dynamic-quiz",
+    "appService.deploySubpath": "dist\\dynamic-quiz"
+}
